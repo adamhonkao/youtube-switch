@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube Switch</title>
+<link rel="icon" href="icon.png">
+<style>
+  :root {
+    --bg: #f6f6f4; --card: #ffffff; --text: #1d1d1f; --muted: #6e6e73;
+    --line: #e4e4e0; --accent: #de2626; --code: #f0f0ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161617; --card: #1f1f21; --text: #f2f2f2; --muted: #a1a1a6;
+      --line: #333336; --accent: #ff4d4d; --code: #2a2a2d;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  }
+  main { max-width: 680px; margin: 0 auto; padding: 48px 16px 80px; }
+  header { display: flex; gap: 20px; align-items: center; margin-bottom: 28px; }
+  header img { width: 88px; height: 88px; flex: none; }
+  h1 { font-size: 32px; line-height: 1.15; margin: 0 0 4px; letter-spacing: -0.02em; }
+  header p { margin: 0; color: var(--muted); }
+  .download {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #fff; text-decoration: none; font-weight: 600;
+    padding: 14px 22px; border-radius: 12px; margin: 4px 0 8px;
+  }
+  .download:hover { filter: brightness(1.08); }
+  .small { color: var(--muted); font-size: 14px; margin: 0 0 36px; }
+  h2 { font-size: 21px; margin: 40px 0 14px; letter-spacing: -0.01em; }
+  ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+  ol.steps > li {
+    counter-increment: s; position: relative;
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px 18px 16px 62px; margin-bottom: 10px;
+  }
+  ol.steps > li::before {
+    content: counter(s); position: absolute; left: 18px; top: 15px;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--accent); color: #fff; font-weight: 700; font-size: 15px;
+    display: grid; place-items: center;
+  }
+  ol.steps ol { margin: 8px 0 0; padding-left: 20px; }
+  ol.steps ol li { margin: 4px 0; }
+  ul.plain { padding-left: 20px; margin: 0; }
+  ul.plain li { margin: 6px 0; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px 20px;
+  }
+  b.ui { font-weight: 600; }
+  code { background: var(--code); padding: 1px 6px; border-radius: 5px; font-size: 15px; }
+  .warn { border-left: 4px solid var(--accent); }
+  @media (max-width: 480px) {
+    header img { width: 64px; height: 64px; }
+    h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon.png" alt="">
+    <div>
+      <h1>YouTube Switch</h1>
+      <p>Turn YouTube on and off for everyone on this Mac, with one click.</p>
+    </div>
+  </header>
+
+  <a class="download" href="YouTube-Switch.zip" download>Download for Mac</a>
+  <p class="small">macOS only. About 100 KB.</p>
+
+  <h2>Install</h2>
+  <ol class="steps">
+    <li>Log in to <b>your own</b> account on the Mac and download the file above.</li>
+    <li>Open <b>Downloads</b> and double-click <code>YouTube-Switch.zip</code> to unzip it.</li>
+    <li>Drag <b>YouTube Switch</b> to your <b>Desktop</b> or your home folder. Don't put it in the main Applications folder. Every account can see that one.</li>
+    <li>Approve it with macOS, once:
+      <ol>
+        <li>Double-click <b>YouTube Switch</b>. macOS says it was <i>“Not Opened.”</i> Click <b class="ui">Done</b>.</li>
+        <li>Open <b class="ui">System Settings → Privacy &amp; Security</b>.</li>
+        <li>Scroll to the bottom. Next to <i>“YouTube Switch was blocked…”</i> click <b class="ui">Open Anyway</b> and enter your password.</li>
+        <li>Click <b class="ui">Open Anyway</b> once more in the box that pops up.</li>
+      </ol>
+      After this, it opens with a normal double-click.
+    </li>
+  </ol>
+
+  <h2>Use it</h2>
+  <ol class="steps">
+    <li>Double-click <b>YouTube Switch</b>. It shows whether YouTube is <b>BLOCKED</b> or <b>ALLOWED</b>.</li>
+    <li>Click <b class="ui">Block YouTube</b> or <b class="ui">Allow YouTube</b>, then enter your Mac password.</li>
+    <li>The window stays open, so you can switch back and forth. Your password is remembered for a few minutes. Click <b class="ui">Quit</b> when you're done.</li>
+  </ol>
+  <p class="small" style="margin-top:12px">Blocking also closes Chrome in your child's account, so the block applies as soon as Chrome is reopened.</p>
+
+  <h2>Good to know</h2>
+  <div class="card">
+    <ul class="plain">
+      <li>The block applies to every account on this Mac, including yours.</li>
+      <li>It only covers this Mac. Phones, iPads and TVs need their own settings, such as Screen Time.</li>
+      <li>It doesn't stop a VPN.</li>
+      <li>The first time it runs, it saves a backup of your settings file at <code>/etc/hosts.youtube-switch.bak</code>.</li>
+      <li><b>To remove it:</b> open it, choose <b class="ui">Allow YouTube</b>, quit, then drag the app to the Trash.</li>
+    </ul>
+  </div>
+</main>
+</body>
+</html>
