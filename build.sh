@@ -5,6 +5,7 @@ cd "$(dirname "$0")"
 rm -rf build && mkdir build && cd build
 python3 ../src/icon.py
 iconutil -c icns icon.iconset -o applet.icns
+python3 ../src/og.py
 cp icon-preview.png ../site/icon.png && sips -Z 256 ../site/icon.png >/dev/null
 osacompile -o "YouTube Switch.app" ../src/app.applescript
 cp ../src/toggle.sh applet.icns "YouTube Switch.app/Contents/Resources/"
