@@ -58,6 +58,13 @@
   b.ui { font-weight: 600; }
   code { background: var(--code); padding: 1px 6px; border-radius: 5px; font-size: 15px; }
   .warn { border-left: 4px solid var(--accent); }
+  .why { margin: 0 0 24px; }
+  blockquote {
+    margin: 0 0 8px; padding: 14px 20px; background: var(--card);
+    border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 14px;
+  }
+  blockquote p { margin: 0 0 6px; }
+  blockquote cite { color: var(--muted); font-size: 14px; font-style: normal; }
   @media (max-width: 480px) {
     header img { width: 64px; height: 64px; }
     h1 { font-size: 26px; }
@@ -74,8 +81,15 @@
     </div>
   </header>
 
+  <p class="why">Your kid sits down at the Mac to do homework. Twenty minutes later they're six videos deep on YouTube. Screen Time can block it, but it's buried in Settings, set up one kid at a time, and a pain to undo for the weekend. This is one button. Block YouTube on school nights. Allow it on Saturday.</p>
+
   <a class="download" href="YouTube-Switch.zip" download>Download for Mac</a>
   <p class="small">macOS only. About 100 KB. It's free and open source. <a href="https://github.com/adamhonkao/youtube-switch">See the code on GitHub</a>.</p>
+
+  <blockquote>
+    <p>“I’m amazed that this did not exist already. Very helpful for anyone dealing with YouTube and other Internet junkies.”</p>
+    <cite>Kal</cite>
+  </blockquote>
 
   <h2>Install</h2>
   <ol class="steps">
